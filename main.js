@@ -13,6 +13,7 @@ function onAdd() {
     const item = makeItem(text);
     //3. items 컨테이너 안에 새로 만든 아이템을 추가
     items.appendChild(item);
+    item.scrollIntoView({block: 'center'});
     //4. 인풋을 초기화 한다.
     input.value = '';
     input.focus();
@@ -49,8 +50,10 @@ function makeItem(text){
 
 addBtn.addEventListener('click', () => {
     onAdd();
-})
+});
 
 input.addEventListener('keypress', (event) => {
-    console.log('key');
-})
+    if(event.key === 'Enter') {
+        onAdd();
+    }
+});

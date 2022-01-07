@@ -12,6 +12,7 @@ button {
   cursor: pointer;
 }
 body {
+  margin: 100px 0;
   text-align: center;
   background: rgb(34, 193, 195);
   background: rgb(255, 218, 157);
@@ -22,6 +23,7 @@ body {
     rgba(255, 195, 173, 1) 100%
   );
 }
+
 .list {
   background-color: #f1f0f7;
   width: 400px;
