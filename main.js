@@ -1,6 +1,13 @@
 const items = document.querySelector('.items');
 const input = document.querySelector('.footer__input');
 const addBtn = document.querySelector('.footer__button');
+const form = document.querySelector('.new-form');
+
+form.addEventListener('submit', (event) => {
+    //submit이벤트가 발생하면 자동으로 페이지를 로딩함. -> event.preventDefault()로 막는다.
+    event.preventDefault();
+    onAdd();
+})
 
 function onAdd() {
     //1. 사용자가 입력한 text 받아옴
@@ -40,15 +47,23 @@ function makeItem(text){
     return itemRow;
 }
 
-addBtn.addEventListener('click', () => {
-    onAdd();
-});
+// addBtn.addEventListener('click', () => {
+//     onAdd();
+// });
 
-input.addEventListener('keypress', (event) => {
-    if(event.key === 'Enter') {
-        onAdd();
-    }
-});
+// input.addEventListener('keydown', (event) => {
+// // keyup일 때는 key가 내려갈때 이미 브라우저에 입력이 완료된 상태이기 때문에 preventDefault()가 실행안됨
+// //     if(event.key == 'a'){
+// //         event.preventDefault();
+// //     }
+// //맥에서 key down일 때 한글 입력시 멋대로 엔터가 조작되는 이슈가 있는데 이때는 진행중인 과정이 끝날때까지 iscomposing을 리턴해주면된다.
+// // if(event.isCoposing){
+// //     return;
+// // }
+//     if(event.key === 'Enter') {
+//         onAdd();
+//     }
+// });
 
 items.addEventListener('click', (event) =>{
     const targetId = event.target.dataset.targetId;

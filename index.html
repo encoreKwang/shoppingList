@@ -22,10 +22,18 @@
       </header>
       <ul class="items"></ul>
       <footer class="footer">
-        <input type="text" class="footer__input" />
-        <button class="footer__button">
-          <i class="fas fa-plus"></i>
-        </button>
+        <!-- 브라우저에서 사용자에게 input을 받아오거나 사용자가 데이터를 입력해서 서버에-->
+        <!-- 데이터를 전송해야하는 경우 시맨틱하게 사용하는 form태그 -->
+        <!-- http메소드(post, put)를 이용해서 서버에 데이터를 전송: action 사용 -->
+        <!-- 혹은 지금처럼 단순히 사용자에게 데이터를 받아서 클라이언트에 처리하는 경우에 form 사용 -->
+        <!-- form태그 안에서 enter나 버튼을 클릭하면 자동으로 submit이라는 이벤트가 발생 -->
+        <!-- form안에 button은 디폴트가 submit이다 그래도 type="submit"을 명시 -->
+        <form class="new-form">
+          <input type="text" class="footer__input" />
+          <button type="submit" class="footer__button">
+            <i class="fas fa-plus"></i>
+          </button>
+        </form>
       </footer>
     </section>
   </body>
